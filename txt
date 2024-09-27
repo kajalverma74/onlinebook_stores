@@ -1,0 +1,102 @@
+// // routes/books.js
+// const express = require('express');
+// const Book = require('../models/book'); // Import the Book model
+// const router = express.Router();
+
+// // GET all books
+// router.get('/', async (req, res) => {
+//   try {
+//     const books = await Book.find();
+//     res.json(books);
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// });
+
+// // GET a single book by ID
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const book = await Book.findById(req.params.id);
+//     if (!book) {
+//       return res.status(404).json({ message: 'Book not found' });
+//     }
+//     res.json(book);
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// });
+
+// // POST a new book
+// router.post('/', async (req, res) => {
+//   const book = new Book({
+//     title: req.body.title,
+//     author: req.body.author,
+//     genre: req.body.genre,
+//     price: req.body.price,
+//     description: req.body.description,
+//     image: req.body.image,
+//     stock: req.body.stock,
+//     rating: req.body.rating,
+//   });
+
+//   try {
+//     const newBook = await book.save();
+//     res.status(201).json(newBook);
+//   } catch (err) {
+//     res.status(400).json({ message: err.message });
+//   }
+// });
+
+// // PUT to update a book by ID
+// router.put('/:id', async (req, res) => {
+//   try {
+//     const book = await Book.findById(req.params.id);
+//     if (!book) {
+//       return res.status(404).json({ message: 'Book not found' });
+//     }
+
+//     // Update the book fields
+//     book.title = req.body.title || book.title;
+//     book.author = req.body.author || book.author;
+//     book.genre = req.body.genre || book.genre;
+//     book.price = req.body.price || book.price;
+//     book.description = req.body.description || book.description;
+//     book.image = req.body.image || book.image;
+//     book.stock = req.body.stock || book.stock;
+//     book.rating = req.body.rating || book.rating;
+
+//     const updatedBook = await book.save();
+//     res.json(updatedBook);
+//   } catch (err) {
+//     res.status(400).json({ message: err.message });
+//   }
+// });
+
+// // DELETE a book by ID
+// router.delete('/:id', async (req, res) => {
+//   try {
+//     const book = await Book.findById(req.params.id);
+//     if (!book) {
+//       return res.status(404).json({ message: 'Book not found' });
+//     }
+
+//     await book.remove();
+//     res.json({ message: 'Book deleted successfully' });
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// });
+
+// module.exports = router;
+
+
+
+
+// Examples:
+// To fetch all books, you'd send a GET request to /books.
+// To fetch a single book, you'd send a GET request to /books/:id (e.g., /books/12345).
+// To add a new book, you'd send a POST request to /books with the book data.
+// To update a book, you'd send a PUT request to /books/:id with the updated data.
+// To delete a book, you'd send a DELETE request to /books/:id
+
+/////    https://mahbubbello.hashnode.dev/build-a-bookstore-with-nodejs-expressjs-mongodb-and-jwt ///
