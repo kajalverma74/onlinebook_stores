@@ -22,7 +22,7 @@ const orderSchema = new mongoose.Schema({
 module.exports = mongoose.model('Order', orderSchema);
 
 
-// method post in orders
+//  post orders  in example of json format in postman 
 //     "user": "66f3e88f3c06229538d65d20",
 //     "books": [
 //      {
